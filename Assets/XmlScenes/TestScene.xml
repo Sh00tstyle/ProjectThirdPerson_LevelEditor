@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<SceneObjectContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SceneObjects>
+    <SceneObject Name="Suzanna" LocalPosition="(-2.8, 0.0, 0.0)" LocalRotation="(0.0, 180.0, 0.0)" LocalScale="(1.0, 1.0, 1.0)" Model="suzanna_smooth.obj" Texture="bricks.jpg" Parent="" />
+    <SceneObject Name="Cube" LocalPosition="(-2.8, 0.0, 0.0)" LocalRotation="(0.0, 180.0, 0.0)" LocalScale="(1.0, 1.0, 1.0)" Model="" Texture="" Parent="Suzanna" />
+    <SceneObject Name="Teapot" LocalPosition="(2.2, 0.0, 0.0)" LocalRotation="(0.0, 90.0, 0.0)" LocalScale="(1.0, 1.0, 1.0)" Model="teapot_smooth.obj" Texture="land.jpg" Parent="" />
+  </SceneObjects>
+</SceneObjectContainer>
