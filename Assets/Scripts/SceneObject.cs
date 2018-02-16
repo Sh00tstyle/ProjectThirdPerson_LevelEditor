@@ -2,6 +2,7 @@
 using System.Xml.Serialization;
 using UnityEngine;
 
+//used for environmental objects
 public class SceneObject {
 
     [XmlAttribute("Name")]
@@ -21,7 +22,4 @@ public class SceneObject {
 
     [XmlAttribute("Texture")]
     public string Texture;
-
-    [XmlAttribute("Parent")]
-    public string Parent;
 }

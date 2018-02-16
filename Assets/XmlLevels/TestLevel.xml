@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<PlayfieldContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Playfield Height="10" Width="4" Content="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+  <SceneObject Name="Suzanna" LocalPosition="(-4.8, 0.0, -1.0)" LocalRotation="(0.0, 0.0, 0.0)" LocalScale="(1.0, 1.0, 1.0)" Model="suzanna_smooth.obj" Texture="bricks.jpg" />
+  <SceneObject Name="Teapot" LocalPosition="(6.6, 0.0, -1.1)" LocalRotation="(0.0, 0.0, 0.0)" LocalScale="(1.0, 1.0, 1.0)" Model="teapot_smooth.obj" Texture="land.jpg" />
+</PlayfieldContainer>

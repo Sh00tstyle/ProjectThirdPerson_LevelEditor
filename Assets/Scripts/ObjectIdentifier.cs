@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+//class that displays the models and textures and takes care of providing the filenames of them
 public class ObjectIdentifier : MonoBehaviour {
 
     [SerializeField]
