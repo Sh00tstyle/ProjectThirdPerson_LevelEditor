@@ -16,6 +16,20 @@ public class LevelExporterScript : MonoBehaviour {
 
     public Transform sceneEnvironment;
 
+    public GameObject tileModel; //tile model
+
+    public Texture[] uncoloredTileTextures; //max. 5
+    public Texture[] redTileTextures; //max. 5
+    public Texture[] blueTileTextures; //max .5
+    public Texture redDestinationTileTexture;
+    public Texture blueDestinationTileTexture;
+    public Texture[] redPressurePlateTextures; //1 or more
+    public Texture[] bluePressurePlateTextures; //1 or more
+    public Texture[] redActivatableTileTexture; //1 or more
+    public Texture[] blueActivatableTileTexture; //1 or more
+    public Texture redColorSwitchTexture;
+    public Texture blueColorSwitchTexture;
+
     private int[,] _playfield;
 
     private Transform[] _sceneObjects;
@@ -30,7 +44,7 @@ public class LevelExporterScript : MonoBehaviour {
                 _playfield[i, j] = (int)TileType.Uncolored; //default (0)
 
                 GameObject newTile = Instantiate(tilePrefab);
-                newTile.transform.position = new Vector3(j * tileDistance, 0, i * tileDistance);
+                newTile.transform.position = new Vector3((j - playfieldWidth / 2.0f) * tileDistance + 1, 0, (i - playfieldHeight / 2.0f) * tileDistance + 1);
                 newTile.transform.parent = transform;
 
                 //storing tile properties
@@ -93,22 +107,53 @@ public class LevelExporterScript : MonoBehaviour {
             //getting the tile type value and storing it in the playfield list
             playfield.AddContent(tileType);
 
+            switch(tileType) {
+                case (int)TileType.PressurePlate:
+                    PressurePlate pressurePlate = new PressurePlate();
+                    pressurePlate.ColPos = currentTile.GetArrayXPos();
+                    pressurePlate.RowPos = currentTile.GetArrayYPos();
+                    pressurePlate.ID = currentTile.GetPlateID();
+                    pressurePlate.NeededColor = (int)currentTile.GetTileColor();
+
+                    playfieldContainer.AddPressurePlate(pressurePlate);
+                    break;
+
+                case (int)TileType.ActivatableTile:
+                    ActivatableTile activatableTile = new ActivatableTile();
+                    activatableTile.ColPos = currentTile.GetArrayXPos();
+                    activatableTile.RowPos = currentTile.GetArrayYPos();
+                    activatableTile.ID = currentTile.GetPlateID();
+                    activatableTile.DisplayColor = (int)currentTile.GetTileColor();
+
+                    playfieldContainer.AddActivatableTile(activatableTile);
+                    break;
+
+                case (int)TileType.PlayerSpawn:
+                    SpawnTile spawnTile = new SpawnTile();
+                    spawnTile.ColPos = currentTile.GetArrayXPos();
+                    spawnTile.RowPos = currentTile.GetArrayYPos();
+                    spawnTile.StartingColor = (int)currentTile.GetTileColor();
+
+                    playfieldContainer.AddSpawnTile(spawnTile);
+                    break;
+
+                case (int)TileType.Destination:
+                    DestinationTile destinationTile = new DestinationTile();
+                    destinationTile.ColPos = currentTile.GetArrayXPos();
+                    destinationTile.RowPos = currentTile.GetArrayYPos();
+                    destinationTile.NeededColor = (int)currentTile.GetTileColor();
+
+                    playfieldContainer.AddDestinationTile(destinationTile);
+                    break;
+
+                default:
+                    break;
+            }
+
             if(tileType == (int)TileType.PressurePlate) {
-                PressurePlate pressurePlate = new PressurePlate();
-                pressurePlate.ColPos = currentTile.GetArrayXPos();
-                pressurePlate.RowPos = currentTile.GetArrayYPos();
-                pressurePlate.ID = currentTile.GetPlateID();
-                pressurePlate.NeededColor = (int)currentTile.GetTileColor();
-
-                playfieldContainer.AddPressurePlate(pressurePlate);
+                
             } else if(tileType == (int)TileType.ActivatableTile) {
-                ActivatableTile activatableTile = new ActivatableTile();
-                activatableTile.ColPos = currentTile.GetArrayXPos();
-                activatableTile.RowPos = currentTile.GetArrayYPos();
-                activatableTile.ID = currentTile.GetPlateID();
-                activatableTile.DisplayColor = (int)currentTile.GetTileColor();
-
-                playfieldContainer.AddActvatableTile(activatableTile);
+                
             }
         }
 

@@ -23,6 +23,12 @@ public class PlayfieldContainer {
     [XmlArrayItem("ActivatableTile")]
     public List<ActivatableTile> ActivatableTiles = new List<ActivatableTile>();
 
+    [XmlElement("SpawnTile")]
+    public SpawnTile SpawnTile;
+
+    [XmlElement("DestinationTile")]
+    public DestinationTile DestinationTile;
+
     public void AddPlayfield(Playfield playfield) {
         Playfield = playfield;
     }
@@ -35,7 +41,15 @@ public class PlayfieldContainer {
         PressurePlates.Add(pressurePlate);
     }
     
-    public void AddActvatableTile(ActivatableTile activatableTile) {
+    public void AddActivatableTile(ActivatableTile activatableTile) {
         ActivatableTiles.Add(activatableTile);
+    }
+
+    public void AddSpawnTile(SpawnTile spawnTile) {
+        SpawnTile = spawnTile;
+    }
+
+    public void AddDestinationTile(DestinationTile destinationTile) {
+        DestinationTile = destinationTile;
     }
 }

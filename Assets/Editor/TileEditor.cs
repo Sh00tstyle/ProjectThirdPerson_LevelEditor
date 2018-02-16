@@ -40,6 +40,14 @@ public class TileEditor : Editor {
                 EditorGUILayout.PropertyField(colorProp, new GUIContent("Display Color"));
                 break;
 
+            case TileType.PlayerSpawn:
+                EditorGUILayout.PropertyField(colorProp, new GUIContent("Starting Color"));
+                break;
+
+            case TileType.Destination:
+                EditorGUILayout.PropertyField(colorProp, new GUIContent("Destination Color"));
+                break;
+
             default:
                 break;
         }

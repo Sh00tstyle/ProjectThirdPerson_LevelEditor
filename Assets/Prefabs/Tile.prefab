@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4184438751227228}
   - component: {fileID: 33247521048631676}
-  - component: {fileID: 65532509289736508}
   - component: {fileID: 23304071880772474}
+  - component: {fileID: 65250398059048986}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Tile
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427311455054976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.8910265, y: -4.6991706, z: -4.2819953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,8 +82,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427311455054976}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65532509289736508
+  m_Mesh: {fileID: 4300000, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+--- !u!65 &65250398059048986
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 0.617742, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
