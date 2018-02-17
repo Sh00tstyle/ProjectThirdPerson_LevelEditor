@@ -4,30 +4,45 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class LevelExporterScript : MonoBehaviour {
 
     public string fileName;
 
+    [Header("Playfield Settings")]
     public int playfieldHeight;
     public int playfieldWidth;
     public GameObject tilePrefab;
-    public float tileDistance;
+    public float tileSize;
 
+    [Header("Scene Objects")]
     public Transform sceneEnvironment;
 
-    public GameObject tileModel; //tile model
+    [Header("Model")]
+    public GameObject tileModel;
 
-    public Texture[] uncoloredTileTextures; //max. 5
-    public Texture[] redTileTextures; //max. 5
-    public Texture[] blueTileTextures; //max .5
+    [Header("Tile Textures")]
+    public Texture[] uncoloredTileTextures;
+    [Space(5)]
+    public Texture[] redTileTextures;
+    [Space(5)]
+    public Texture[] blueTileTextures;
+    [Space(5)]
     public Texture redDestinationTileTexture;
+    [Space(5)]
     public Texture blueDestinationTileTexture;
-    public Texture[] redPressurePlateTextures; //1 or more
-    public Texture[] bluePressurePlateTextures; //1 or more
-    public Texture[] redActivatableTileTexture; //1 or more
-    public Texture[] blueActivatableTileTexture; //1 or more
+    [Space(5)]
+    public Texture[] redPressurePlateTextures;
+    [Space(5)]
+    public Texture[] bluePressurePlateTextures;
+    [Space(5)]
+    public Texture[] redActivatableTileTextures;
+    [Space(5)]
+    public Texture[] blueActivatableTileTextures;
+    [Space(5)]
     public Texture redColorSwitchTexture;
+    [Space(5)]
     public Texture blueColorSwitchTexture;
 
     private int[,] _playfield;
@@ -44,18 +59,20 @@ public class LevelExporterScript : MonoBehaviour {
                 _playfield[i, j] = (int)TileType.Uncolored; //default (0)
 
                 GameObject newTile = Instantiate(tilePrefab);
-                newTile.transform.position = new Vector3((j - playfieldWidth / 2.0f) * tileDistance + 1, 0, (i - playfieldHeight / 2.0f) * tileDistance + 1);
+                newTile.transform.position = new Vector3((j - playfieldWidth / 2.0f) * tileSize + 1, 0, (i - playfieldHeight / 2.0f) * tileSize + 1);
                 newTile.transform.parent = transform;
+
+                newTile.GetComponent<MeshFilter>().sharedMesh = tileModel.GetComponentInChildren<MeshFilter>().sharedMesh;
 
                 //storing tile properties
                 newTile.AddComponent(typeof(TileScript));
                 TileScript tileScript = newTile.GetComponent<TileScript>();
                 tileScript.SetTileType(TileType.Uncolored);
                 tileScript.SetArrayPos(i, j);
+
+                tileScript.ApplyType();
             }
         }
-
-        Debug.Log("Playfield created");
     }
 
     public void ClearPlayField() {
@@ -67,8 +84,6 @@ public class LevelExporterScript : MonoBehaviour {
         }
 
         _playfield = null;
-
-        Debug.Log("Playfield cleared");
     }
 
     public void CreateXMLFile() {
@@ -87,6 +102,22 @@ public class LevelExporterScript : MonoBehaviour {
         stream.Close();
 
         Debug.Log("Scenefile '" + fileName + ".xml' created in Assets/XmlLevels");
+    }
+
+    private string GetFilenameFromTexture(Texture texture) {
+        if (texture == null) return "";
+
+        string path = AssetDatabase.GetAssetPath(texture);
+        path = path.Replace("Assets/Textures/", ""); //remove the path to just get the filename
+        return path;
+    }
+
+    private string GetFilenameFromModel(GameObject gameObj) {
+        if (gameObj == null) return "";
+
+        string path = AssetDatabase.GetAssetPath(gameObj);
+        path = path.Replace("Assets/Models/", ""); //remove the path to just get the filename
+        return path;
     }
 
     private PlayfieldContainer CreatePlayfieldContainer() {
@@ -123,7 +154,6 @@ public class LevelExporterScript : MonoBehaviour {
                     activatableTile.ColPos = currentTile.GetArrayXPos();
                     activatableTile.RowPos = currentTile.GetArrayYPos();
                     activatableTile.ID = currentTile.GetPlateID();
-                    activatableTile.DisplayColor = (int)currentTile.GetTileColor();
 
                     playfieldContainer.AddActivatableTile(activatableTile);
                     break;
@@ -168,6 +198,43 @@ public class LevelExporterScript : MonoBehaviour {
             //Adding the newly created object to the list
             playfieldContainer.AddSceneObject(sceneObject);
         }
+
+        //adding texture filenames and model filename to the XML file
+        playfieldContainer.AddTileModel(GetFilenameFromModel(tileModel));
+
+        for(int i = 0; i < uncoloredTileTextures.Length; i++) {
+            playfieldContainer.AddUncoloredTileTexture(GetFilenameFromTexture(uncoloredTileTextures[i]));
+        }
+
+        for (int i = 0; i < redTileTextures.Length; i++) {
+            playfieldContainer.AddRedTileTexture(GetFilenameFromTexture(redTileTextures[i]));
+        }
+
+        for (int i = 0; i < blueTileTextures.Length; i++) {
+            playfieldContainer.AddBlueTileTexture(GetFilenameFromTexture(blueTileTextures[i]));
+        }
+
+        playfieldContainer.AddRedDestinationTileTexture(GetFilenameFromTexture(redDestinationTileTexture));
+        playfieldContainer.AddBlueDestinationTileTexture(GetFilenameFromTexture(blueDestinationTileTexture));
+
+        for (int i = 0; i < redPressurePlateTextures.Length; i++) {
+            playfieldContainer.AddRedPressurePlateTexture(GetFilenameFromTexture(redPressurePlateTextures[i]));
+        }
+
+        for (int i = 0; i < bluePressurePlateTextures.Length; i++) {
+            playfieldContainer.AddBluePressurePlateTexture(GetFilenameFromTexture(bluePressurePlateTextures[i]));
+        }
+
+        for (int i = 0; i < redActivatableTileTextures.Length; i++) {
+            playfieldContainer.AddRedActivatableTileTexture(GetFilenameFromTexture(redActivatableTileTextures[i]));
+        }
+
+        for (int i = 0; i < blueActivatableTileTextures.Length; i++) {
+            playfieldContainer.AddBlueActivatableTileTexture(GetFilenameFromTexture(blueActivatableTileTextures[i]));
+        }
+
+        playfieldContainer.AddRedColorSwitchTexture(GetFilenameFromTexture(redColorSwitchTexture));
+        playfieldContainer.AddBlueColorSwitchTexture(GetFilenameFromTexture(blueColorSwitchTexture));
 
         return playfieldContainer;
     }

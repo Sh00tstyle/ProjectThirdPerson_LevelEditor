@@ -1,4 +1,4 @@
 ﻿public enum TileColor {
-    Red,
-    Blue
+    Red = 3,
+    Blue = 4
 }

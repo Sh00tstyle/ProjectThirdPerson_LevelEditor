@@ -11,7 +11,7 @@ public class PressurePlate {
     public int RowPos;
 
     [XmlAttribute("ID")]
-    public string ID;
+    public int ID;
 
     [XmlAttribute("NeededColor")]
     public int NeededColor;

@@ -8,7 +8,7 @@ public class TileScript : MonoBehaviour {
     public TileType tileType;
 
     //properties for pressure plates and activatable tiles
-    public string plateID; //string instead of int to have an empty string by default
+    public int plateID;
     public TileColor color;
 
     private int _arrayXPos;
@@ -26,40 +26,78 @@ public class TileScript : MonoBehaviour {
     }
 
     public void ApplyType() {
+        LevelExporterScript levelExporter = GetComponentInParent<LevelExporterScript>();
+
+        Texture newTexture = null;
+        int rnd;
+        int id;
+
         //do something visual with the tile to show different 
         switch(tileType) {
-            case TileType.BlueTile:
-                GetComponent<Renderer>().material.color = Color.blue;
+            case TileType.RedTile:
+                rnd = Random.Range(0, levelExporter.redTileTextures.Length);
+
+                newTexture = levelExporter.redTileTextures[rnd];
                 break;
 
-            case TileType.RedTile:
-                GetComponent<Renderer>().material.color = Color.red;
+            case TileType.BlueTile:
+                rnd = Random.Range(0, levelExporter.blueTileTextures.Length);
+
+                newTexture = levelExporter.blueTileTextures[rnd];
                 break;
+
 
             case TileType.Destination:
-                GetComponent<Renderer>().material.color = Color.black;
+                if(color == TileColor.Blue) newTexture = levelExporter.blueDestinationTileTexture;
+                else if(color == TileColor.Red) newTexture = levelExporter.redDestinationTileTexture;
                 break;
 
             case TileType.PressurePlate:
-                //TODO
+                
+
+                if (color == TileColor.Blue) {
+                    if (plateID >= levelExporter.bluePressurePlateTextures.Length) id = 0;
+                    else id = plateID;
+
+                    newTexture = levelExporter.bluePressurePlateTextures[id];
+                } else if (color == TileColor.Red) {
+                    if (plateID >= levelExporter.redPressurePlateTextures.Length) id = 0;
+                    else id = plateID;
+
+                    newTexture = levelExporter.redPressurePlateTextures[id];
+                }
                 break;
 
             case TileType.ActivatableTile:
-                //TODO
+                if (color == TileColor.Blue) {
+                    if (plateID >= levelExporter.blueActivatableTileTextures.Length) id = 0;
+                    else id = plateID;
+
+                    newTexture = levelExporter.blueActivatableTileTextures[id];
+                } else if (color == TileColor.Red) {
+                    if (plateID >= levelExporter.redActivatableTileTextures.Length) id = 0;
+                    else id = plateID;
+
+                    newTexture = levelExporter.redActivatableTileTextures[id];
+                }
                 break;
 
             case TileType.RedColorSwitch:
-                //TODO
+                newTexture = levelExporter.redColorSwitchTexture;
                 break;
 
             case TileType.BlueColorSwitch:
-                //TODO
+                newTexture = levelExporter.blueColorSwitchTexture;
                 break;
 
             default:
-                GetComponent<Renderer>().material.color = Color.white;
+                rnd = Random.Range(0, levelExporter.uncoloredTileTextures.Length);
+
+                newTexture = levelExporter.uncoloredTileTextures[rnd];
                 break;
         }
+
+        if(newTexture != null) GetComponent<Renderer>().material.mainTexture = newTexture;
     }
 
     public void SetArrayPos(int x, int y) {
@@ -76,7 +114,7 @@ public class TileScript : MonoBehaviour {
         return _arrayYPos;
     }
 
-    public string GetPlateID() {
+    public int GetPlateID() {
         return plateID;
     }
 

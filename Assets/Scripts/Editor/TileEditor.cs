@@ -37,7 +37,6 @@ public class TileEditor : Editor {
 
             case TileType.ActivatableTile:
                 EditorGUILayout.PropertyField(plateIDProp, new GUIContent("Activatable Tile ID"));
-                EditorGUILayout.PropertyField(colorProp, new GUIContent("Display Color"));
                 break;
 
             case TileType.PlayerSpawn:

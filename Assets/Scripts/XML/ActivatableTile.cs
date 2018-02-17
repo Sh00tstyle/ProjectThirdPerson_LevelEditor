@@ -11,8 +11,5 @@ public class ActivatableTile {
     public int RowPos;
 
     [XmlAttribute("ID")]
-    public string ID;
-
-    [XmlAttribute("DisplayColor")]
-    public int DisplayColor;
+    public int ID;
 }

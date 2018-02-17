@@ -13,6 +13,8 @@ public class ObjectIdentifier : MonoBehaviour {
     private Texture _texture;
 
     public void OnValidate() {
+        if (_objFile == null && _texture == null) return;
+
         //Assign material and texture to the object
         MeshFilter filter = GetComponent<MeshFilter>();
         MeshRenderer renderer = GetComponent<MeshRenderer>();
