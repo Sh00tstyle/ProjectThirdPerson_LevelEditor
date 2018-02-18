@@ -14,8 +14,7 @@ public class TileScript : MonoBehaviour {
     public void SetTileType(TileType pType) {
         tileType = pType;
 
-        if(tileType == TileType.None) gameObject.GetComponent<Renderer>().enabled = false;
-        else gameObject.GetComponent<Renderer>().enabled = true;
+        ApplyType();
     }
 
     public TileType GetTileType() {
@@ -24,6 +23,7 @@ public class TileScript : MonoBehaviour {
 
     public void ApplyType() {
         LevelExporterScript levelExporter = GetComponentInParent<LevelExporterScript>();
+        gameObject.GetComponent<Renderer>().enabled = true;
 
         Texture newTexture = null;
         int rnd;
@@ -31,6 +31,12 @@ public class TileScript : MonoBehaviour {
 
         //do something visual with the tile to show different 
         switch(tileType) {
+            case TileType.Uncolored:
+                rnd = Random.Range(0, levelExporter.uncoloredTileTextures.Length);
+
+                newTexture = levelExporter.uncoloredTileTextures[rnd];
+                break;
+
             case TileType.RedTile:
                 rnd = Random.Range(0, levelExporter.redTileTextures.Length);
 
@@ -88,9 +94,7 @@ public class TileScript : MonoBehaviour {
                 break;
 
             default:
-                rnd = Random.Range(0, levelExporter.uncoloredTileTextures.Length);
-
-                newTexture = levelExporter.uncoloredTileTextures[rnd];
+                gameObject.GetComponent<Renderer>().enabled = false;
                 break;
         }
 
