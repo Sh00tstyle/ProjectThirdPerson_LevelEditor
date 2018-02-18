@@ -19,10 +19,17 @@ public class LevelExporterScript : MonoBehaviour {
     [Header("Scene Objects")]
     public Transform sceneEnvironment;
 
-    [Header("Model")]
+    [Header("Models")]
     public GameObject tileModel;
 
-    [Header("Tile Textures")]
+    public GameObject playerModel;
+
+    [Header("Textures")]
+    public Texture redPlayerTexture;
+    [Space(5)]
+    public Texture bluePlayerTexture;
+
+    [Space(10)]
     public Texture[] uncoloredTileTextures;
     [Space(5)]
     public Texture[] redTileTextures;
@@ -68,7 +75,6 @@ public class LevelExporterScript : MonoBehaviour {
                 newTile.AddComponent(typeof(TileScript));
                 TileScript tileScript = newTile.GetComponent<TileScript>();
                 tileScript.SetTileType(TileType.Uncolored);
-                tileScript.SetArrayPos(i, j);
 
                 tileScript.ApplyType();
             }
@@ -91,11 +97,11 @@ public class LevelExporterScript : MonoBehaviour {
 
         _sceneObjects = sceneEnvironment.GetComponentsInChildren<Transform>();
 
-        XmlSerializer serializer = new XmlSerializer(typeof(PlayfieldContainer));
+        XmlSerializer serializer = new XmlSerializer(typeof(SceneContainer));
         FileStream stream = new FileStream(filePath, FileMode.Create);
 
         //Creating the container with all relevant level data
-        PlayfieldContainer playfieldContainer = CreatePlayfieldContainer();
+        SceneContainer playfieldContainer = CreatePlayfieldContainer();
 
         //Creating the file
         serializer.Serialize(stream, playfieldContainer);
@@ -120,8 +126,8 @@ public class LevelExporterScript : MonoBehaviour {
         return path;
     }
 
-    private PlayfieldContainer CreatePlayfieldContainer() {
-        PlayfieldContainer playfieldContainer = new PlayfieldContainer();
+    private SceneContainer CreatePlayfieldContainer() {
+        SceneContainer sceneContainer = new SceneContainer();
         Playfield playfield = new Playfield();
 
         Transform[] allTiles = GetComponentsInChildren<Transform>();
@@ -134,6 +140,7 @@ public class LevelExporterScript : MonoBehaviour {
             TileScript currentTile = allTiles[i].gameObject.GetComponent<TileScript>();
 
             int tileType = (int)currentTile.GetTileType();
+            int listPos = i - 1;
 
             //getting the tile type value and storing it in the playfield list
             playfield.AddContent(tileType);
@@ -141,39 +148,39 @@ public class LevelExporterScript : MonoBehaviour {
             switch(tileType) {
                 case (int)TileType.PressurePlate:
                     PressurePlate pressurePlate = new PressurePlate();
-                    pressurePlate.ColPos = currentTile.GetArrayXPos();
-                    pressurePlate.RowPos = currentTile.GetArrayYPos();
+                    pressurePlate.ColPos = listPos % playfieldWidth;
+                    pressurePlate.RowPos = listPos / playfieldWidth;
                     pressurePlate.ID = currentTile.GetPlateID();
                     pressurePlate.NeededColor = (int)currentTile.GetTileColor();
 
-                    playfieldContainer.AddPressurePlate(pressurePlate);
+                    sceneContainer.AddPressurePlate(pressurePlate);
                     break;
 
                 case (int)TileType.ActivatableTile:
                     ActivatableTile activatableTile = new ActivatableTile();
-                    activatableTile.ColPos = currentTile.GetArrayXPos();
-                    activatableTile.RowPos = currentTile.GetArrayYPos();
+                    activatableTile.ColPos = listPos % playfieldWidth;
+                    activatableTile.RowPos = listPos / playfieldWidth;
                     activatableTile.ID = currentTile.GetPlateID();
 
-                    playfieldContainer.AddActivatableTile(activatableTile);
+                    sceneContainer.AddActivatableTile(activatableTile);
                     break;
 
                 case (int)TileType.PlayerSpawn:
                     SpawnTile spawnTile = new SpawnTile();
-                    spawnTile.ColPos = currentTile.GetArrayXPos();
-                    spawnTile.RowPos = currentTile.GetArrayYPos();
+                    spawnTile.ColPos = listPos % playfieldWidth;
+                    spawnTile.RowPos = listPos / playfieldWidth;
                     spawnTile.StartingColor = (int)currentTile.GetTileColor();
 
-                    playfieldContainer.AddSpawnTile(spawnTile);
+                    sceneContainer.AddSpawnTile(spawnTile);
                     break;
 
                 case (int)TileType.Destination:
                     DestinationTile destinationTile = new DestinationTile();
-                    destinationTile.ColPos = currentTile.GetArrayXPos();
-                    destinationTile.RowPos = currentTile.GetArrayYPos();
+                    destinationTile.ColPos = listPos % playfieldWidth;
+                    destinationTile.RowPos = listPos / playfieldWidth;
                     destinationTile.NeededColor = (int)currentTile.GetTileColor();
 
-                    playfieldContainer.AddDestinationTile(destinationTile);
+                    sceneContainer.AddDestinationTile(destinationTile);
                     break;
 
                 default:
@@ -187,7 +194,7 @@ public class LevelExporterScript : MonoBehaviour {
             }
         }
 
-        playfieldContainer.AddPlayfield(playfield);
+        sceneContainer.AddPlayfield(playfield);
 
         //Adding the scene environment objects to the XML file
         for (int i = 1; i < _sceneObjects.Length; i++) {
@@ -196,47 +203,51 @@ public class LevelExporterScript : MonoBehaviour {
             SceneObject sceneObject = CreateSceneObject(currentTransform);
 
             //Adding the newly created object to the list
-            playfieldContainer.AddSceneObject(sceneObject);
+            sceneContainer.AddSceneObject(sceneObject);
         }
 
         //adding texture filenames and model filename to the XML file
-        playfieldContainer.AddTileModel(GetFilenameFromModel(tileModel));
+        sceneContainer.AddTileModel(GetFilenameFromModel(tileModel));
+        sceneContainer.AddPlayerModel(GetFilenameFromModel(playerModel));
 
-        for(int i = 0; i < uncoloredTileTextures.Length; i++) {
-            playfieldContainer.AddUncoloredTileTexture(GetFilenameFromTexture(uncoloredTileTextures[i]));
+        sceneContainer.AddRedPlayerTexture(GetFilenameFromTexture(redPlayerTexture));
+        sceneContainer.AddBluePlayerTexture(GetFilenameFromTexture(bluePlayerTexture));
+
+        for (int i = 0; i < uncoloredTileTextures.Length; i++) {
+            sceneContainer.AddUncoloredTileTexture(GetFilenameFromTexture(uncoloredTileTextures[i]));
         }
 
         for (int i = 0; i < redTileTextures.Length; i++) {
-            playfieldContainer.AddRedTileTexture(GetFilenameFromTexture(redTileTextures[i]));
+            sceneContainer.AddRedTileTexture(GetFilenameFromTexture(redTileTextures[i]));
         }
 
         for (int i = 0; i < blueTileTextures.Length; i++) {
-            playfieldContainer.AddBlueTileTexture(GetFilenameFromTexture(blueTileTextures[i]));
+            sceneContainer.AddBlueTileTexture(GetFilenameFromTexture(blueTileTextures[i]));
         }
 
-        playfieldContainer.AddRedDestinationTileTexture(GetFilenameFromTexture(redDestinationTileTexture));
-        playfieldContainer.AddBlueDestinationTileTexture(GetFilenameFromTexture(blueDestinationTileTexture));
+        sceneContainer.AddRedDestinationTileTexture(GetFilenameFromTexture(redDestinationTileTexture));
+        sceneContainer.AddBlueDestinationTileTexture(GetFilenameFromTexture(blueDestinationTileTexture));
 
         for (int i = 0; i < redPressurePlateTextures.Length; i++) {
-            playfieldContainer.AddRedPressurePlateTexture(GetFilenameFromTexture(redPressurePlateTextures[i]));
+            sceneContainer.AddRedPressurePlateTexture(GetFilenameFromTexture(redPressurePlateTextures[i]));
         }
 
         for (int i = 0; i < bluePressurePlateTextures.Length; i++) {
-            playfieldContainer.AddBluePressurePlateTexture(GetFilenameFromTexture(bluePressurePlateTextures[i]));
+            sceneContainer.AddBluePressurePlateTexture(GetFilenameFromTexture(bluePressurePlateTextures[i]));
         }
 
         for (int i = 0; i < redActivatableTileTextures.Length; i++) {
-            playfieldContainer.AddRedActivatableTileTexture(GetFilenameFromTexture(redActivatableTileTextures[i]));
+            sceneContainer.AddRedActivatableTileTexture(GetFilenameFromTexture(redActivatableTileTextures[i]));
         }
 
         for (int i = 0; i < blueActivatableTileTextures.Length; i++) {
-            playfieldContainer.AddBlueActivatableTileTexture(GetFilenameFromTexture(blueActivatableTileTextures[i]));
+            sceneContainer.AddBlueActivatableTileTexture(GetFilenameFromTexture(blueActivatableTileTextures[i]));
         }
 
-        playfieldContainer.AddRedColorSwitchTexture(GetFilenameFromTexture(redColorSwitchTexture));
-        playfieldContainer.AddBlueColorSwitchTexture(GetFilenameFromTexture(blueColorSwitchTexture));
+        sceneContainer.AddRedColorSwitchTexture(GetFilenameFromTexture(redColorSwitchTexture));
+        sceneContainer.AddBlueColorSwitchTexture(GetFilenameFromTexture(blueColorSwitchTexture));
 
-        return playfieldContainer;
+        return sceneContainer;
     }
 
     private SceneObject CreateSceneObject(Transform objTransform) {
@@ -245,10 +256,10 @@ public class LevelExporterScript : MonoBehaviour {
         //name
         sceneObject.Name = objTransform.name;
 
-        //transform properties
-        sceneObject.LocalPosition = objTransform.localPosition; //will NOT be the same as in the MGE
-        sceneObject.LocalRotation = objTransform.localEulerAngles; //will NOT be the same as in the MGE
-        sceneObject.LocalScale = objTransform.localScale;
+        //position (scale and rotation modification wont be allowed)
+        sceneObject.xPos = objTransform.position.x;
+        sceneObject.yPos = objTransform.position.y; 
+        sceneObject.zPos = objTransform.position.z;
 
         //model and texture
         ObjectIdentifier objectIdentifier = objTransform.GetComponent<ObjectIdentifier>();

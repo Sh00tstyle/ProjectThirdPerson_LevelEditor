@@ -8,14 +8,14 @@ public class SceneObject {
     [XmlAttribute("Name")]
     public string Name;
 
-    [XmlAttribute("LocalPosition")]
-    public Vector3 LocalPosition;
+    [XmlAttribute("xPos")]
+    public float xPos;
 
-    [XmlAttribute("LocalRotation")]
-    public Vector3 LocalRotation;
+    [XmlAttribute("yPos")]
+    public float yPos;
 
-    [XmlAttribute("LocalScale")]
-    public Vector3 LocalScale;
+    [XmlAttribute("zPos")]
+    public float zPos;
 
     [XmlAttribute("Model")]
     public string Model;

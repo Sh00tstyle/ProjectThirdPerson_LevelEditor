@@ -11,9 +11,6 @@ public class TileScript : MonoBehaviour {
     public int plateID;
     public TileColor color;
 
-    private int _arrayXPos;
-    private int _arrayYPos;
-
     public void SetTileType(TileType pType) {
         tileType = pType;
 
@@ -98,20 +95,6 @@ public class TileScript : MonoBehaviour {
         }
 
         if(newTexture != null) GetComponent<Renderer>().material.mainTexture = newTexture;
-    }
-
-    public void SetArrayPos(int x, int y) {
-        //store tile position
-        _arrayXPos = x;
-        _arrayYPos = y;
-    }
-
-    public int GetArrayXPos() {
-        return _arrayXPos;
-    }
-
-    public int GetArrayYPos() {
-        return _arrayYPos;
     }
 
     public int GetPlateID() {

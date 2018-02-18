@@ -5,8 +5,8 @@ using System.Xml.Serialization;
 using UnityEngine;
 
 //containing all relevant data of the scene
-[XmlRoot("PlayfieldContainer")]
-public class PlayfieldContainer {
+[XmlRoot("SceneContainer")]
+public class SceneContainer {
 
     //Playfield
     [XmlElement("Playfield")]
@@ -34,47 +34,56 @@ public class PlayfieldContainer {
 
     //Textures
     [XmlElement("TileModel")]
-    public TileModel TileModel;
+    public XmlModel TileModel;
+
+    [XmlElement("PlayerModel")]
+    public XmlModel PlayerModel;
+
+    [XmlElement("RedPlayerTexture")]
+    public XmlTexture RedPlayerTexture;
+
+    [XmlElement("BluePlayerTexture")]
+    public XmlTexture BluePlayerTexture;
 
     [XmlArray("UncoloredTileTextures")]
     [XmlArrayItem("UncoloredTileTexture")]
-    public List<TileTexture> UncoloredTileTextures = new List<TileTexture>();
+    public List<XmlTexture> UncoloredTileTextures = new List<XmlTexture>();
 
     [XmlArray("RedTileTextures")]
     [XmlArrayItem("RedTileTexture")]
-    public List<TileTexture> RedTileTextures = new List<TileTexture>();
+    public List<XmlTexture> RedTileTextures = new List<XmlTexture>();
 
     [XmlArray("BlueTileTextures")]
-    [XmlArrayItem("BlueTileTextures")]
-    public List<TileTexture> BlueTileTextures = new List<TileTexture>();
+    [XmlArrayItem("BlueTileTexture")]
+    public List<XmlTexture> BlueTileTextures = new List<XmlTexture>();
 
     [XmlElement("RedDestinationTileTexture")]
-    public TileTexture RedDestinationTileTexture;
+    public XmlTexture RedDestinationTileTexture;
 
     [XmlElement("BlueDestinationTileTexture")]
-    public TileTexture BlueDestinationTileTexture;
+    public XmlTexture BlueDestinationTileTexture;
 
     [XmlArray("RedPressurePlateTextures")]
     [XmlArrayItem("RedPressurePlateTexture")]
-    public List<TileTexture> RedPressurePlateTextures = new List<TileTexture>();
+    public List<XmlTexture> RedPressurePlateTextures = new List<XmlTexture>();
 
     [XmlArray("BluePressurePlateTextures")]
     [XmlArrayItem("BluePressurePlateTexture")]
-    public List<TileTexture> BluePressurePlateTextures = new List<TileTexture>();
+    public List<XmlTexture> BluePressurePlateTextures = new List<XmlTexture>();
 
     [XmlArray("RedActivatableTileTextures")]
     [XmlArrayItem("RedActivatableTileTexture")]
-    public List<TileTexture> RedActivatableTileTextures = new List<TileTexture>();
+    public List<XmlTexture> RedActivatableTileTextures = new List<XmlTexture>();
 
     [XmlArray("BlueActivatableTileTextures")]
     [XmlArrayItem("BlueActivatableTileTexture")]
-    public List<TileTexture> BlueActivatableTileTextures = new List<TileTexture>();
+    public List<XmlTexture> BlueActivatableTileTextures = new List<XmlTexture>();
 
     [XmlElement("RedColorSwitchTexture")]
-    public TileTexture RedColorSwitchTexture;
+    public XmlTexture RedColorSwitchTexture;
 
     [XmlElement("BlueColorSwitchTexture")]
-    public TileTexture BlueColorSwitchTexture;
+    public XmlTexture BlueColorSwitchTexture;
 
     public void AddPlayfield(Playfield playfield) {
         Playfield = playfield;
@@ -103,16 +112,43 @@ public class PlayfieldContainer {
     public void AddTileModel(string filename) {
         if (filename == "") return;
 
-        TileModel tileModel = new TileModel();
+        XmlModel tileModel = new XmlModel();
         tileModel.ModelFile = filename;
 
         TileModel = tileModel;
     }
 
+    public void AddPlayerModel(string filename) {
+        if (filename == "") return;
+
+        XmlModel playerModel = new XmlModel();
+        playerModel.ModelFile = filename;
+
+        PlayerModel = playerModel;
+    }
+
+    public void AddRedPlayerTexture(string filename) {
+        if (filename == "") return;
+
+        XmlTexture playerTexture = new XmlTexture();
+        playerTexture.TextureFile = filename;
+
+        RedPlayerTexture = playerTexture;
+    }
+
+    public void AddBluePlayerTexture(string filename) {
+        if (filename == "") return;
+
+        XmlTexture playerTexture = new XmlTexture();
+        playerTexture.TextureFile = filename;
+
+        BluePlayerTexture = playerTexture;
+    }
+
     public void AddUncoloredTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         UncoloredTileTextures.Add(tileTexture);
@@ -121,7 +157,7 @@ public class PlayfieldContainer {
     public void AddRedTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         RedTileTextures.Add(tileTexture);
@@ -130,7 +166,7 @@ public class PlayfieldContainer {
     public void AddBlueTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         BlueTileTextures.Add(tileTexture);
@@ -139,7 +175,7 @@ public class PlayfieldContainer {
     public void AddRedDestinationTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         RedDestinationTileTexture = tileTexture;
@@ -148,7 +184,7 @@ public class PlayfieldContainer {
     public void AddBlueDestinationTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         BlueDestinationTileTexture = tileTexture;
@@ -157,7 +193,7 @@ public class PlayfieldContainer {
     public void AddRedPressurePlateTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         RedPressurePlateTextures.Add(tileTexture);
@@ -166,7 +202,7 @@ public class PlayfieldContainer {
     public void AddBluePressurePlateTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         BluePressurePlateTextures.Add(tileTexture);
@@ -175,7 +211,7 @@ public class PlayfieldContainer {
     public void AddRedActivatableTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         RedActivatableTileTextures.Add(tileTexture);
@@ -184,7 +220,7 @@ public class PlayfieldContainer {
     public void AddBlueActivatableTileTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         BlueActivatableTileTextures.Add(tileTexture);
@@ -193,7 +229,7 @@ public class PlayfieldContainer {
     public void AddRedColorSwitchTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         RedColorSwitchTexture = tileTexture;
@@ -202,7 +238,7 @@ public class PlayfieldContainer {
     public void AddBlueColorSwitchTexture(string filename) {
         if (filename == "") return;
 
-        TileTexture tileTexture = new TileTexture();
+        XmlTexture tileTexture = new XmlTexture();
         tileTexture.TextureFile = filename;
 
         BlueColorSwitchTexture = tileTexture;

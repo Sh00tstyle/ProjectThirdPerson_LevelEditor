@@ -18,6 +18,11 @@ public class PlayfieldEditor : Editor {
 
     SerializedProperty tileModelProp; //tile model
 
+    SerializedProperty playerModelProp; //player model
+
+    SerializedProperty redPlayerTextureProp; //player model
+    SerializedProperty bluePlayerTextureProp; //player model
+
     SerializedProperty uncoloredTileTexturesProp; //max. 5
     SerializedProperty redTileTexturesProp; //max. 5
     SerializedProperty blueTileTexturesProp; //max .5
@@ -43,6 +48,11 @@ public class PlayfieldEditor : Editor {
         sceneEnvironmentProp = serializedObject.FindProperty("sceneEnvironment");
 
         tileModelProp = serializedObject.FindProperty("tileModel");
+
+        playerModelProp = serializedObject.FindProperty("playerModel");
+
+        redPlayerTextureProp = serializedObject.FindProperty("redPlayerTexture");
+        bluePlayerTextureProp = serializedObject.FindProperty("bluePlayerTexture");
 
         uncoloredTileTexturesProp = serializedObject.FindProperty("uncoloredTileTextures"); 
         redTileTexturesProp = serializedObject.FindProperty("redTileTextures"); 
@@ -75,6 +85,11 @@ public class PlayfieldEditor : Editor {
         EditorGUILayout.PropertyField(sceneEnvironmentProp, new GUIContent("Scene Environment"));
 
         EditorGUILayout.PropertyField(tileModelProp, new GUIContent("Tile Model"));
+
+        EditorGUILayout.PropertyField(playerModelProp, new GUIContent("Player Model"));
+
+        EditorGUILayout.PropertyField(redPlayerTextureProp, new GUIContent("Red Player Texture"));
+        EditorGUILayout.PropertyField(bluePlayerTextureProp, new GUIContent("Blue Player Texture"));
 
         EditorGUILayout.PropertyField(uncoloredTileTexturesProp, new GUIContent("Uncolored Tile Textures"));
 
