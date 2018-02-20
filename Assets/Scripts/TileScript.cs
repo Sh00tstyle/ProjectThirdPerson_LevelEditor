@@ -37,6 +37,16 @@ public class TileScript : MonoBehaviour {
                 newTexture = levelExporter.uncoloredTileTextures[rnd];
                 break;
 
+            case TileType.PlayerSpawn:
+                if (color == TileColor.Blue) {
+                    rnd = Random.Range(0, levelExporter.blueTileTextures.Length);
+                    newTexture = levelExporter.blueTileTextures[rnd];
+                } else if (color == TileColor.Red) {
+                    rnd = Random.Range(0, levelExporter.redTileTextures.Length);
+                    newTexture = levelExporter.redTileTextures[rnd];
+                }
+                break;
+
             case TileType.RedTile:
                 rnd = Random.Range(0, levelExporter.redTileTextures.Length);
 
@@ -56,8 +66,6 @@ public class TileScript : MonoBehaviour {
                 break;
 
             case TileType.PressurePlate:
-                
-
                 if (color == TileColor.Blue) {
                     if (plateID >= levelExporter.bluePressurePlateTextures.Length) id = 0;
                     else id = plateID;

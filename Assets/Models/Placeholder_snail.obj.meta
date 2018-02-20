@@ -1,18 +1,24 @@
 fileFormatVersion: 2
-guid: 9c8e603756c630445a834c062981d88e
-timeCreated: 1519034598
+guid: fb6687a6fe700d24fbab725c14521fae
+timeCreated: 1519133701
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: default
-    400000: //RootNode
-    400002: default
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Non_PBR___Specular_Glossiness:Group1_Group1_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    100002: Non_PBR___Specular_Glossiness:ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    100004: //RootNode
+    400000: Non_PBR___Specular_Glossiness:Group1_Group1_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    400002: Non_PBR___Specular_Glossiness:ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    400004: //RootNode
+    2100000: Non_PBR___Specular_Glossiness_Group1_Group1_Non_PBR___Specular_Glossiness_g_Placeholder_SnailMat
+    2100002: Non_PBR___Specular_Glossiness_ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness_g_Placeholder_SnailMat
+    2300000: Non_PBR___Specular_Glossiness:Group1_Group1_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    2300002: Non_PBR___Specular_Glossiness:ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    3300000: Non_PBR___Specular_Glossiness:Group1_Group1_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    3300002: Non_PBR___Specular_Glossiness:ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    4300000: Non_PBR___Specular_Glossiness:Group1_Group1_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
+    4300002: Non_PBR___Specular_Glossiness:ZBrush_defualt_group_ZBrush_defualt_group_Non_PBR___Specular_Glossiness:g_Placeholder_Snail
   externalObjects: {}
   materials:
     importMaterials: 1

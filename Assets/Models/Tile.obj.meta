@@ -7,12 +7,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Tile
     100002: //RootNode
+    100004: g_polySurface5_polySurface5
     400000: Tile
     400002: //RootNode
+    400004: g_polySurface5_polySurface5
     2100000: TileMat
+    2100002: g_polySurface5_polySurface5Mat
     2300000: Tile
+    2300002: g_polySurface5_polySurface5
     3300000: Tile
+    3300002: g_polySurface5_polySurface5
     4300000: Tile
+    4300002: g_polySurface5_polySurface5
   externalObjects: {}
   materials:
     importMaterials: 1

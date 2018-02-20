@@ -257,9 +257,20 @@ public class LevelExporterScript : MonoBehaviour {
         sceneObject.Name = objTransform.name;
 
         //position (scale and rotation modification wont be allowed)
-        sceneObject.xPos = objTransform.position.x;
-        sceneObject.yPos = objTransform.position.y; 
-        sceneObject.zPos = objTransform.position.z;
+        sceneObject.xPos = -objTransform.localPosition.x; //invert x for the mge 
+        sceneObject.yPos = objTransform.localPosition.y; 
+        sceneObject.zPos = objTransform.localPosition.z;
+
+        //rotation
+        sceneObject.xRot = objTransform.localRotation.x;
+        sceneObject.yRot = -objTransform.localRotation.y;
+        sceneObject.zRot = -objTransform.localRotation.z;
+        sceneObject.wRot = objTransform.localRotation.w;
+
+        //scale
+        sceneObject.xScale = objTransform.localScale.x;
+        sceneObject.yScale = objTransform.localScale.y;
+        sceneObject.zScale = objTransform.localScale.z;
 
         //model and texture
         ObjectIdentifier objectIdentifier = objTransform.GetComponent<ObjectIdentifier>();
