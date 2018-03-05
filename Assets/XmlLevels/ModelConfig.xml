@@ -23,22 +23,28 @@
   <RedDestinationTileTexture TextureFile="RedDestinationTile.png" />
   <BlueDestinationTileTexture TextureFile="BlueDestinationTile.png" />
   <RedPressurePlateTextures>
-    <RedPressurePlateTexture TextureFile="RedPressurePlate.png" />
+    <RedPressurePlateTexture TextureFile="RedPressurePlate1.png" />
+    <RedPressurePlateTexture TextureFile="RedPressurePlate2.png" />
   </RedPressurePlateTextures>
   <BluePressurePlateTextures>
-    <BluePressurePlateTexture TextureFile="BluePressurePlate.png" />
+    <BluePressurePlateTexture TextureFile="BluePressurePlate1.png" />
+    <BluePressurePlateTexture TextureFile="BluePressurePlate2.png" />
   </BluePressurePlateTextures>
   <RedActivatableTileActiveTextures>
-    <RedActivatableTileActiveTexture TextureFile="RedActivatableTile.png" />
+    <RedActivatableTileActiveTexture TextureFile="RedActivatableTile_active_1.png" />
+    <RedActivatableTileActiveTexture TextureFile="RedActivatableTile_active_2.png" />
   </RedActivatableTileActiveTextures>
   <RedActivatableTileInactiveTextures>
-    <RedActivatableTileInactiveTexture TextureFile="RedActivatableTile.png" />
+    <RedActivatableTileInactiveTexture TextureFile="RedActivatableTile_inactive_1.png" />
+    <RedActivatableTileInactiveTexture TextureFile="RedActivatableTile_inactive_2.png" />
   </RedActivatableTileInactiveTextures>
   <BlueActivatableTileActiveTextures>
-    <BlueActivatableTileActiveTexture TextureFile="BlueActivatableTile.png" />
+    <BlueActivatableTileActiveTexture TextureFile="BlueActivatableTile_active_1.png" />
+    <BlueActivatableTileActiveTexture TextureFile="BlueActivatableTile_active_2.png" />
   </BlueActivatableTileActiveTextures>
   <BlueActivatableTileInactiveTextures>
-    <BlueActivatableTileInactiveTexture TextureFile="BlueActivatableTile.png" />
+    <BlueActivatableTileInactiveTexture TextureFile="BlueActivatableTile_inactive_1.png" />
+    <BlueActivatableTileInactiveTexture TextureFile="BlueActivatableTile_inactive_2.png" />
   </BlueActivatableTileInactiveTextures>
   <RedColorSwitchTexture TextureFile="RedColorSwitch.png" />
   <BlueColorSwitchTexture TextureFile="BlueColorSwitch.png" />
