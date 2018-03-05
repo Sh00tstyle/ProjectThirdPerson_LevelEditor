@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1672781644064698}
+  m_IsPrefabParent: 1
+--- !u!1 &1672781644064698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4826343145889618}
+  - component: {fileID: 114467158478478480}
+  m_Layer: 0
+  m_Name: ModelExporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4826343145889618
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672781644064698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114467158478478480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672781644064698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c725669bb75d4142b11c50af68e7e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  destinationTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  pressurePlateModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  activatableTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  colorSwitchModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  playerModel: {fileID: 100004, guid: fb6687a6fe700d24fbab725c14521fae, type: 3}
+  redPlayerTexture: {fileID: 2800000, guid: 81d3d963a133c4d46b6bb9ad215cb976, type: 3}
+  bluePlayerTexture: {fileID: 2800000, guid: 2049975ee0834c24a83a86cd441ee983, type: 3}
+  uncoloredTileTextures:
+  - {fileID: 2800000, guid: d4d7a673fb38835488b7aa398550ab2e, type: 3}
+  - {fileID: 2800000, guid: c1e010b5412595f4eb830179f3f1791f, type: 3}
+  - {fileID: 2800000, guid: 34142003b56e5b949b458b021f8d7a1f, type: 3}
+  - {fileID: 2800000, guid: 6e4ab7e6390706842b23b4617251240d, type: 3}
+  redTileTextures:
+  - {fileID: 2800000, guid: 848e6034f62614441bfc69ac9390d545, type: 3}
+  blueTileTextures:
+  - {fileID: 2800000, guid: 867a2dc1abab1e149aeabc8caa85242c, type: 3}
+  redDestinationTileTexture: {fileID: 2800000, guid: 2ce6737610f819d4a8586b7349abda37,
+    type: 3}
+  blueDestinationTileTexture: {fileID: 2800000, guid: 266f4d03ad1987a48b1c9ceb56c58f1f,
+    type: 3}
+  redPressurePlateTextures:
+  - {fileID: 2800000, guid: 5fdf1894803dade458356ebe720b7956, type: 3}
+  bluePressurePlateTextures:
+  - {fileID: 2800000, guid: a078e52ad91e11743abac934d43fe930, type: 3}
+  redActivatableTileActiveTextures:
+  - {fileID: 2800000, guid: 9cf85c3791da66b46a94aa0af813c6bf, type: 3}
+  redActivatableTileInactiveTextures:
+  - {fileID: 2800000, guid: 9cf85c3791da66b46a94aa0af813c6bf, type: 3}
+  blueActivatableTileActiveTextures:
+  - {fileID: 2800000, guid: 27c1963ce98f6544fa0d521972a1032e, type: 3}
+  blueActivatableTileInactiveTextures:
+  - {fileID: 2800000, guid: 27c1963ce98f6544fa0d521972a1032e, type: 3}
+  redColorSwitchTexture: {fileID: 2800000, guid: 167a5f17b88983a4f9d8008a88245341,
+    type: 3}
+  blueColorSwitchTexture: {fileID: 2800000, guid: ed950860bb7b3594983d6fa51884edcb,
+    type: 3}

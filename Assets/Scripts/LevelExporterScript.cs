@@ -19,38 +19,8 @@ public class LevelExporterScript : MonoBehaviour {
     [Header("Scene Objects")]
     public Transform sceneEnvironment;
 
-    [Header("Models")]
-    public GameObject tileModel;
-
-    public GameObject playerModel;
-
-    [Header("Textures")]
-    public Texture redPlayerTexture;
-    [Space(5)]
-    public Texture bluePlayerTexture;
-
-    [Space(10)]
-    public Texture[] uncoloredTileTextures;
-    [Space(5)]
-    public Texture[] redTileTextures;
-    [Space(5)]
-    public Texture[] blueTileTextures;
-    [Space(5)]
-    public Texture redDestinationTileTexture;
-    [Space(5)]
-    public Texture blueDestinationTileTexture;
-    [Space(5)]
-    public Texture[] redPressurePlateTextures;
-    [Space(5)]
-    public Texture[] bluePressurePlateTextures;
-    [Space(5)]
-    public Texture[] redActivatableTileTextures;
-    [Space(5)]
-    public Texture[] blueActivatableTileTextures;
-    [Space(5)]
-    public Texture redColorSwitchTexture;
-    [Space(5)]
-    public Texture blueColorSwitchTexture;
+    [Header("Models and Textures")]
+    public Transform modelsAndTextures;
 
     private int[,] _playfield;
 
@@ -61,6 +31,9 @@ public class LevelExporterScript : MonoBehaviour {
 
         _playfield = new int[playfieldHeight, playfieldWidth]; //new playfield with the given size
 
+        ModelExporterScript modelExporter = modelsAndTextures.GetComponent<ModelExporterScript>();
+        GameObject tileModel = modelExporter.normalTileModel;
+
         for (int i = 0; i < playfieldHeight; i++) {
             for(int j = 0; j < playfieldWidth; j++) {
                 _playfield[i, j] = (int)TileType.Uncolored; //default (0)
@@ -69,6 +42,7 @@ public class LevelExporterScript : MonoBehaviour {
                 newTile.transform.position = new Vector3((j - playfieldWidth / 2.0f) * tileSize + 1, 0, (i - playfieldHeight / 2.0f) * tileSize + 1);
                 newTile.transform.parent = transform;
 
+                //Apply model mesh
                 newTile.GetComponent<MeshFilter>().sharedMesh = tileModel.GetComponentInChildren<MeshFilter>().sharedMesh;
 
                 //storing tile properties
@@ -108,22 +82,6 @@ public class LevelExporterScript : MonoBehaviour {
         stream.Close();
 
         Debug.Log("Scenefile '" + fileName + ".xml' created in Assets/XmlLevels");
-    }
-
-    private string GetFilenameFromTexture(Texture texture) {
-        if (texture == null) return "";
-
-        string path = AssetDatabase.GetAssetPath(texture);
-        path = path.Replace("Assets/Textures/", ""); //remove the path to just get the filename
-        return path;
-    }
-
-    private string GetFilenameFromModel(GameObject gameObj) {
-        if (gameObj == null) return "";
-
-        string path = AssetDatabase.GetAssetPath(gameObj);
-        path = path.Replace("Assets/Models/", ""); //remove the path to just get the filename
-        return path;
     }
 
     private SceneContainer CreatePlayfieldContainer() {
@@ -205,47 +163,6 @@ public class LevelExporterScript : MonoBehaviour {
             //Adding the newly created object to the list
             sceneContainer.AddSceneObject(sceneObject);
         }
-
-        //adding texture filenames and model filename to the XML file
-        sceneContainer.AddTileModel(GetFilenameFromModel(tileModel));
-        sceneContainer.AddPlayerModel(GetFilenameFromModel(playerModel));
-
-        sceneContainer.AddRedPlayerTexture(GetFilenameFromTexture(redPlayerTexture));
-        sceneContainer.AddBluePlayerTexture(GetFilenameFromTexture(bluePlayerTexture));
-
-        for (int i = 0; i < uncoloredTileTextures.Length; i++) {
-            sceneContainer.AddUncoloredTileTexture(GetFilenameFromTexture(uncoloredTileTextures[i]));
-        }
-
-        for (int i = 0; i < redTileTextures.Length; i++) {
-            sceneContainer.AddRedTileTexture(GetFilenameFromTexture(redTileTextures[i]));
-        }
-
-        for (int i = 0; i < blueTileTextures.Length; i++) {
-            sceneContainer.AddBlueTileTexture(GetFilenameFromTexture(blueTileTextures[i]));
-        }
-
-        sceneContainer.AddRedDestinationTileTexture(GetFilenameFromTexture(redDestinationTileTexture));
-        sceneContainer.AddBlueDestinationTileTexture(GetFilenameFromTexture(blueDestinationTileTexture));
-
-        for (int i = 0; i < redPressurePlateTextures.Length; i++) {
-            sceneContainer.AddRedPressurePlateTexture(GetFilenameFromTexture(redPressurePlateTextures[i]));
-        }
-
-        for (int i = 0; i < bluePressurePlateTextures.Length; i++) {
-            sceneContainer.AddBluePressurePlateTexture(GetFilenameFromTexture(bluePressurePlateTextures[i]));
-        }
-
-        for (int i = 0; i < redActivatableTileTextures.Length; i++) {
-            sceneContainer.AddRedActivatableTileTexture(GetFilenameFromTexture(redActivatableTileTextures[i]));
-        }
-
-        for (int i = 0; i < blueActivatableTileTextures.Length; i++) {
-            sceneContainer.AddBlueActivatableTileTexture(GetFilenameFromTexture(blueActivatableTileTextures[i]));
-        }
-
-        sceneContainer.AddRedColorSwitchTexture(GetFilenameFromTexture(redColorSwitchTexture));
-        sceneContainer.AddBlueColorSwitchTexture(GetFilenameFromTexture(blueColorSwitchTexture));
 
         return sceneContainer;
     }

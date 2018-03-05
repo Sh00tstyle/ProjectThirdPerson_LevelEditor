@@ -29,6 +29,8 @@ public class TileScript : MonoBehaviour {
         int rnd;
         int id;
 
+        /**
+
         //do something visual with the tile to show different 
         switch(tileType) {
             case TileType.Uncolored:
@@ -104,7 +106,9 @@ public class TileScript : MonoBehaviour {
             default:
                 gameObject.GetComponent<Renderer>().enabled = false;
                 break;
+
         }
+        /**/
 
         if(newTexture != null) GetComponent<Renderer>().material.mainTexture = newTexture;
     }
