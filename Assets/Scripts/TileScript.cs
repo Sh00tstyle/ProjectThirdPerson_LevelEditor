@@ -22,85 +22,83 @@ public class TileScript : MonoBehaviour {
     }
 
     public void ApplyType() {
-        LevelExporterScript levelExporter = GetComponentInParent<LevelExporterScript>();
+        ModelExporterScript modelExporter = GetComponentInParent<LevelExporterScript>().modelsAndTextures.GetComponent<ModelExporterScript>();
         gameObject.GetComponent<Renderer>().enabled = true;
 
         Texture newTexture = null;
         int rnd;
         int id;
 
-        /**
-
         //do something visual with the tile to show different 
         switch(tileType) {
             case TileType.Uncolored:
-                rnd = Random.Range(0, levelExporter.uncoloredTileTextures.Length);
+                rnd = Random.Range(0, modelExporter.uncoloredTileTextures.Length);
 
-                newTexture = levelExporter.uncoloredTileTextures[rnd];
+                newTexture = modelExporter.uncoloredTileTextures[rnd];
                 break;
 
             case TileType.PlayerSpawn:
                 if (color == TileColor.Blue) {
-                    rnd = Random.Range(0, levelExporter.blueTileTextures.Length);
-                    newTexture = levelExporter.blueTileTextures[rnd];
+                    rnd = Random.Range(0, modelExporter.blueTileTextures.Length);
+                    newTexture = modelExporter.blueTileTextures[rnd];
                 } else if (color == TileColor.Red) {
-                    rnd = Random.Range(0, levelExporter.redTileTextures.Length);
-                    newTexture = levelExporter.redTileTextures[rnd];
+                    rnd = Random.Range(0, modelExporter.redTileTextures.Length);
+                    newTexture = modelExporter.redTileTextures[rnd];
                 }
                 break;
 
             case TileType.RedTile:
-                rnd = Random.Range(0, levelExporter.redTileTextures.Length);
+                rnd = Random.Range(0, modelExporter.redTileTextures.Length);
 
-                newTexture = levelExporter.redTileTextures[rnd];
+                newTexture = modelExporter.redTileTextures[rnd];
                 break;
 
             case TileType.BlueTile:
-                rnd = Random.Range(0, levelExporter.blueTileTextures.Length);
+                rnd = Random.Range(0, modelExporter.blueTileTextures.Length);
 
-                newTexture = levelExporter.blueTileTextures[rnd];
+                newTexture = modelExporter.blueTileTextures[rnd];
                 break;
 
 
             case TileType.Destination:
-                if(color == TileColor.Blue) newTexture = levelExporter.blueDestinationTileTexture;
-                else if(color == TileColor.Red) newTexture = levelExporter.redDestinationTileTexture;
+                if(color == TileColor.Blue) newTexture = modelExporter.blueDestinationTileTexture;
+                else if(color == TileColor.Red) newTexture = modelExporter.redDestinationTileTexture;
                 break;
 
             case TileType.PressurePlate:
                 if (color == TileColor.Blue) {
-                    if (plateID >= levelExporter.bluePressurePlateTextures.Length) id = 0;
+                    if (plateID >= modelExporter.bluePressurePlateTextures.Length) id = 0;
                     else id = plateID;
 
-                    newTexture = levelExporter.bluePressurePlateTextures[id];
+                    newTexture = modelExporter.bluePressurePlateTextures[id];
                 } else if (color == TileColor.Red) {
-                    if (plateID >= levelExporter.redPressurePlateTextures.Length) id = 0;
+                    if (plateID >= modelExporter.redPressurePlateTextures.Length) id = 0;
                     else id = plateID;
 
-                    newTexture = levelExporter.redPressurePlateTextures[id];
+                    newTexture = modelExporter.redPressurePlateTextures[id];
                 }
                 break;
 
             case TileType.ActivatableTile:
                 if (color == TileColor.Blue) {
-                    if (plateID >= levelExporter.blueActivatableTileTextures.Length) id = 0;
+                    if (plateID >= modelExporter.blueActivatableTileActiveTextures.Length) id = 0;
                     else id = plateID;
 
-                    newTexture = levelExporter.blueActivatableTileTextures[id];
+                    newTexture = modelExporter.blueActivatableTileActiveTextures[id];
                 } else if (color == TileColor.Red) {
-                    if (plateID >= levelExporter.redActivatableTileTextures.Length) id = 0;
+                    if (plateID >= modelExporter.redActivatableTileActiveTextures.Length) id = 0;
                     else id = plateID;
 
-                    newTexture = levelExporter.redActivatableTileTextures[id];
+                    newTexture = modelExporter.redActivatableTileActiveTextures[id];
                 }
                 break;
 
             case TileType.RedColorSwitch:
-                newTexture = levelExporter.redColorSwitchTexture;
+                newTexture = modelExporter.redColorSwitchTexture;
                 break;
 
             case TileType.BlueColorSwitch:
-                newTexture = levelExporter.blueColorSwitchTexture;
+                newTexture = modelExporter.blueColorSwitchTexture;
                 break;
 
             default:
@@ -108,7 +106,6 @@ public class TileScript : MonoBehaviour {
                 break;
 
         }
-        /**/
 
         if(newTexture != null) GetComponent<Renderer>().material.mainTexture = newTexture;
     }
