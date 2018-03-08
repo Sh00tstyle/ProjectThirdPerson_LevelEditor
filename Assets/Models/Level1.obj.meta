@@ -7,12 +7,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: default
     100002: //RootNode
+    100004: Level1__1_:Mesh
     400000: default
     400002: //RootNode
+    400004: Level1__1_:Mesh
     2100000: defaultMat
+    2100002: Level1__1__MeshMat
     2300000: default
+    2300002: Level1__1_:Mesh
     3300000: default
+    3300002: Level1__1_:Mesh
     4300000: default
+    4300002: Level1__1_:Mesh
   externalObjects: {}
   materials:
     importMaterials: 1
