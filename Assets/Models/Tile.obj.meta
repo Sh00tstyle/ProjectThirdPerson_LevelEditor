@@ -9,22 +9,28 @@ ModelImporter:
     100002: //RootNode
     100004: g_polySurface5_polySurface5
     100006: tile2:Group45359_Group45359_tile2:g_Tile
+    100008: default
     400000: Tile
     400002: //RootNode
     400004: g_polySurface5_polySurface5
     400006: tile2:Group45359_Group45359_tile2:g_Tile
+    400008: default
     2100000: TileMat
     2100002: g_polySurface5_polySurface5Mat
     2100004: tile2_Group45359_Group45359_tile2_g_TileMat
+    2100006: defaultMat
     2300000: Tile
     2300002: g_polySurface5_polySurface5
     2300004: tile2:Group45359_Group45359_tile2:g_Tile
+    2300006: default
     3300000: Tile
     3300002: g_polySurface5_polySurface5
     3300004: tile2:Group45359_Group45359_tile2:g_Tile
+    3300006: default
     4300000: Tile
     4300002: g_polySurface5_polySurface5
     4300004: tile2:Group45359_Group45359_tile2:g_Tile
+    4300006: default
   externalObjects: {}
   materials:
     importMaterials: 1

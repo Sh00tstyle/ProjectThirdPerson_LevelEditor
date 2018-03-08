@@ -52,22 +52,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
-  destinationTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
-  pressurePlateModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
-  activatableTileModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
-  colorSwitchModel: {fileID: 100002, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+  destinationTileModel: {fileID: 100002, guid: 42c481a19c3014a4c8ba583069b8d286, type: 3}
+  pressurePlateModel: {fileID: 100002, guid: 9570c6b13cebb124e9f53d6d9330969e, type: 3}
+  activatableTileModel: {fileID: 100000, guid: b42408c20b5d37548a9883ca052ae389, type: 3}
+  colorSwitchModel: {fileID: 100000, guid: 70c6984c9067b59478b002d4576ae528, type: 3}
   playerModel: {fileID: 100004, guid: fb6687a6fe700d24fbab725c14521fae, type: 3}
   redPlayerTexture: {fileID: 2800000, guid: 81d3d963a133c4d46b6bb9ad215cb976, type: 3}
   bluePlayerTexture: {fileID: 2800000, guid: 2049975ee0834c24a83a86cd441ee983, type: 3}
   uncoloredTileTextures:
-  - {fileID: 2800000, guid: d4d7a673fb38835488b7aa398550ab2e, type: 3}
+  - {fileID: 2800000, guid: 9f403ec210ed3f248be34198aba2701b, type: 3}
   - {fileID: 2800000, guid: c1e010b5412595f4eb830179f3f1791f, type: 3}
+  - {fileID: 2800000, guid: f0594dac496e1e4438efb7c8dac3922b, type: 3}
   - {fileID: 2800000, guid: 34142003b56e5b949b458b021f8d7a1f, type: 3}
   - {fileID: 2800000, guid: 6e4ab7e6390706842b23b4617251240d, type: 3}
   redTileTextures:
-  - {fileID: 2800000, guid: 848e6034f62614441bfc69ac9390d545, type: 3}
+  - {fileID: 2800000, guid: 2769250f45584a64297931d3a6c66b6c, type: 3}
+  - {fileID: 2800000, guid: bf1382ba4e412e64084d25f9249b94c8, type: 3}
+  - {fileID: 2800000, guid: 7fc41cde6dddf3b4da826a550f79d5c8, type: 3}
+  - {fileID: 2800000, guid: 550304dfb635db448abd62bb63f7fcd7, type: 3}
+  - {fileID: 2800000, guid: 197e2ba7611ae6e4796699ea63fcc4cd, type: 3}
   blueTileTextures:
   - {fileID: 2800000, guid: 867a2dc1abab1e149aeabc8caa85242c, type: 3}
+  - {fileID: 2800000, guid: 82ccc860461748a4182a1c4634562cbb, type: 3}
+  - {fileID: 2800000, guid: ace7733c924468446b7279e4aa81659c, type: 3}
+  - {fileID: 2800000, guid: ba141d111843a644db481356603274a0, type: 3}
+  - {fileID: 2800000, guid: 91e0c37782d99144d816758d56b69172, type: 3}
   redDestinationTileTexture: {fileID: 2800000, guid: 2ce6737610f819d4a8586b7349abda37,
     type: 3}
   blueDestinationTileTexture: {fileID: 2800000, guid: 266f4d03ad1987a48b1c9ceb56c58f1f,

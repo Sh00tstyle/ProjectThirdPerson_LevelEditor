@@ -84,6 +84,16 @@ public class LevelExporterScript : MonoBehaviour {
         Debug.Log("Scenefile '" + fileName + ".xml' created in Assets/XmlLevels");
     }
 
+    public void ApplyMeshAndTextures() {
+        Transform[] allTiles = GetComponentsInChildren<Transform>();
+
+        for (int i = 1; i < allTiles.Length; i++) {
+            TileScript currentTile = allTiles[i].gameObject.GetComponent<TileScript>();
+
+            currentTile.ApplyType();
+        }
+    }
+
     private SceneContainer CreatePlayfieldContainer() {
         SceneContainer sceneContainer = new SceneContainer();
         Playfield playfield = new Playfield();

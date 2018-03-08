@@ -63,7 +63,11 @@ public class PlayfieldEditor : Editor {
             _levelExporter.ClearPlayField();
         }
 
-        if(GUILayout.Button("Create XML File")) {
+        if(GUILayout.Button("Apply Meshes and Textures")) {
+            _levelExporter.ApplyMeshAndTextures();
+        }
+
+        if (GUILayout.Button("Create XML File")) {
             _levelExporter.CreateXMLFile();
         }
     }

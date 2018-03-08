@@ -24,6 +24,7 @@ public class TileScript : MonoBehaviour {
     public void ApplyType() {
         ModelExporterScript modelExporter = GetComponentInParent<LevelExporterScript>().modelsAndTextures.GetComponent<ModelExporterScript>();
         gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.GetComponent<MeshFilter>().sharedMesh = modelExporter.normalTileModel.GetComponentInChildren<MeshFilter>().sharedMesh;
 
         Texture newTexture = null;
         int rnd;
