@@ -420,6 +420,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &42190255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -606,6 +607,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &86091707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -705,6 +707,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &91178413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -804,6 +807,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &93098747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -903,6 +907,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &101978851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1002,6 +1007,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &131427967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1101,6 +1107,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &133503812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1154,93 +1161,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133503809}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
---- !u!21 &135805972
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Detail:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f403ec210ed3f248be34198aba2701b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Occlusion:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _AlphaTestRef: 0.5
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EmissionScaleUI: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Lightmapping: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
-    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &188663382
 Material:
   serializedVersion: 6
@@ -1373,7 +1293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 2
 --- !u!65 &190743949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1400,7 +1321,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 707884419}
+  - {fileID: 1692059239}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1472,7 +1393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 2
 --- !u!65 &195975864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1499,7 +1421,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 262755107}
+  - {fileID: 1543314879}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1745,7 +1667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 3
+  hintID: 3
 --- !u!65 &231282319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1772,7 +1695,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 1298127358}
+  - {fileID: 262621794}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2060,13 +1983,13 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &262755107
+--- !u!21 &262621794
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Default-Material (Instance) (Instance) (Instance)
+  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance) (Instance)
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
   m_LightmapFlags: 5
@@ -2367,6 +2290,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &283182574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2553,6 +2477,7 @@ MonoBehaviour:
   tileType: 6
   plateID: 0
   color: 4
+  hintID: 0
 --- !u!65 &315402285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2907,6 +2832,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &367984836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3006,6 +2932,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &388846870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3105,6 +3032,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &397032926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3204,6 +3132,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &397573186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3302,7 +3231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 3
+  hintID: 3
 --- !u!65 &448854694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3489,6 +3419,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &457543012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3588,6 +3519,7 @@ MonoBehaviour:
   tileType: 6
   plateID: 1
   color: 4
+  hintID: 0
 --- !u!65 &484284069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3687,6 +3619,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &498571003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3785,7 +3718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 1
 --- !u!65 &514313620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3812,7 +3746,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 1321970777}
+  - {fileID: 1031559764}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3972,6 +3906,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &547405649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4071,6 +4006,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &567456616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4257,6 +4193,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &575629333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4965,6 +4902,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &671653703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5018,6 +4956,93 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671653700}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+--- !u!21 &673921479
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9f403ec210ed3f248be34198aba2701b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaTestRef: 0.5
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissionScaleUI: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Lightmapping: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
+    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &675445191
 Material:
   serializedVersion: 6
@@ -5151,6 +5176,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &702632548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5204,93 +5230,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702632545}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
---- !u!21 &707884419
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Default-Material (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Detail:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 34142003b56e5b949b458b021f8d7a1f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Occlusion:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _AlphaTestRef: 0.5
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EmissionScaleUI: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Lightmapping: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
-    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &709877054
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 3
+  hintID: 3
 --- !u!65 &709877057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5363,7 +5303,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 135805972}
+  - {fileID: 673921479}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5697,6 +5637,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &741124862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5796,6 +5737,7 @@ MonoBehaviour:
   tileType: 7
   plateID: 2
   color: 0
+  hintID: 0
 --- !u!65 &744826240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5895,6 +5837,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &756542922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6081,6 +6024,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &785431101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6180,6 +6124,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &793813050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6279,6 +6224,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &799265467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6465,6 +6411,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &814945204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6738,6 +6685,7 @@ MonoBehaviour:
   tileType: 6
   plateID: 2
   color: 3
+  hintID: 0
 --- !u!65 &828046365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6837,6 +6785,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &828532847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7001,6 +6950,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &866592272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7187,6 +7137,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &883102365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7459,7 +7410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 1
 --- !u!65 &977997113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7559,6 +7511,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &983638867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7873,6 +7826,93 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1031559764
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f0594dac496e1e4438efb7c8dac3922b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaTestRef: 0.5
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissionScaleUI: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Lightmapping: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
+    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &1037954300
 Material:
   serializedVersion: 6
@@ -8006,6 +8046,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1052810417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8278,7 +8319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 2
 --- !u!65 &1090895275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8595,6 +8637,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1142156135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8694,6 +8737,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1162340071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8793,6 +8837,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1178364432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8892,6 +8937,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1215579705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8991,6 +9037,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1224782764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9176,7 +9223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 1
 --- !u!65 &1234174322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9276,6 +9324,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1238844061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9462,6 +9511,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1254476974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9561,6 +9611,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1261470220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9660,6 +9711,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1275961639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9713,180 +9765,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1275961636}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
---- !u!21 &1298127358
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Detail:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c1e010b5412595f4eb830179f3f1791f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Occlusion:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _AlphaTestRef: 0.5
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EmissionScaleUI: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Lightmapping: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
-    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1321970777
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Default-Material (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Detail:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f403ec210ed3f248be34198aba2701b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Occlusion:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _AlphaTestRef: 0.5
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EmissionScaleUI: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Lightmapping: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
-    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &1347683796
 Material:
   serializedVersion: 6
@@ -10106,7 +9984,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   plateID: 0
-  color: 0
+  color: 4
+  hintID: 1
 --- !u!65 &1421085253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10293,6 +10172,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1462294800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10392,6 +10272,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1465384258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10578,6 +10459,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1514356137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10677,6 +10559,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1516377115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10730,6 +10613,93 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1516377112}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+--- !u!21 &1543314879
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6e4ab7e6390706842b23b4617251240d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaTestRef: 0.5
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissionScaleUI: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Lightmapping: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
+    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1546802595
 GameObject:
   m_ObjectHideFlags: 0
@@ -10776,6 +10746,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1546802598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10875,6 +10846,7 @@ MonoBehaviour:
   tileType: 7
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1551736891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10974,6 +10946,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1552041421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11073,6 +11046,7 @@ MonoBehaviour:
   tileType: 5
   plateID: 0
   color: 3
+  hintID: 0
 --- !u!65 &1558680491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11259,6 +11233,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1567907873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11358,6 +11333,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1587578783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11631,6 +11607,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1668057208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11684,6 +11661,93 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1668057205}
   m_Mesh: {fileID: 4300006, guid: de3ba7da5615c0349a11108ae1fd9f2a, type: 3}
+--- !u!21 &1692059239
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default-Material (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _UVSEC_UV1
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f0594dac496e1e4438efb7c8dac3922b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaTestRef: 0.5
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissionScaleUI: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Lightmapping: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
+    - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1700509785
 GameObject:
   m_ObjectHideFlags: 0
@@ -11730,6 +11794,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1700509788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12003,6 +12068,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1742705307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12102,6 +12168,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1745014016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12549,6 +12616,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1778358012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12988,6 +13056,8 @@ MonoBehaviour:
   playfieldWidth: 8
   tilePrefab: {fileID: 1427311455054976, guid: 0981aca839ca6c546a60867b10147f51, type: 2}
   tileSize: 2
+  hintAmount: 3
+  triesPerHint: 3
   sceneEnvironment: {fileID: 1096392767}
   modelsAndTextures: {fileID: 2010481698}
 --- !u!21 &1823329368
@@ -13123,6 +13193,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1829829193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13222,6 +13293,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1850032678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13756,6 +13828,7 @@ MonoBehaviour:
   tileType: 2
   plateID: 0
   color: 4
+  hintID: 0
 --- !u!65 &1904095495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13942,6 +14015,7 @@ MonoBehaviour:
   tileType: 1
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1923425248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14041,6 +14115,7 @@ MonoBehaviour:
   tileType: 8
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1934729839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14314,6 +14389,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1959606166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14413,6 +14489,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1960210867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14599,6 +14676,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1976876805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14698,6 +14776,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1981067315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14797,6 +14876,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &1996604832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15030,6 +15110,7 @@ MonoBehaviour:
   tileType: 0
   plateID: 0
   color: 0
+  hintID: 0
 --- !u!65 &2018390154
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15303,6 +15384,7 @@ MonoBehaviour:
   tileType: 7
   plateID: 1
   color: 0
+  hintID: 0
 --- !u!65 &2129480477
 BoxCollider:
   m_ObjectHideFlags: 0
