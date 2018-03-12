@@ -13,6 +13,8 @@ public class PlayfieldEditor : Editor {
     SerializedProperty playfieldWidthProp;
     SerializedProperty tilePrefabProp;
     SerializedProperty tileSizeProp;
+    SerializedProperty hintAmountProp;
+    SerializedProperty triesPerHintProp;
 
     SerializedProperty sceneEnvironmentProp;
 
@@ -27,6 +29,8 @@ public class PlayfieldEditor : Editor {
         playfieldWidthProp = serializedObject.FindProperty("playfieldWidth");
         tilePrefabProp = serializedObject.FindProperty("tilePrefab");
         tileSizeProp = serializedObject.FindProperty("tileSize");
+        hintAmountProp = serializedObject.FindProperty("hintAmount");
+        triesPerHintProp = serializedObject.FindProperty("triesPerHint");
 
         sceneEnvironmentProp = serializedObject.FindProperty("sceneEnvironment");
 
@@ -47,6 +51,9 @@ public class PlayfieldEditor : Editor {
         EditorGUILayout.PropertyField(playfieldWidthProp, new GUIContent("Playfield Width"));
         EditorGUILayout.PropertyField(tilePrefabProp, new GUIContent("Tile Prefab"));
         EditorGUILayout.PropertyField(tileSizeProp, new GUIContent("Tile Size"));
+
+        EditorGUILayout.PropertyField(hintAmountProp, new GUIContent("Hint Amount"));
+        EditorGUILayout.PropertyField(triesPerHintProp, new GUIContent("Tries per Hint"));
 
         EditorGUILayout.PropertyField(sceneEnvironmentProp, new GUIContent("Scene Environment"));
 

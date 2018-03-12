@@ -10,6 +10,7 @@ public class TileEditor : Editor {
     SerializedProperty tileTypeProp;
     SerializedProperty plateIDProp;
     SerializedProperty colorProp;
+    SerializedProperty hintIDProp;
 
     private TileScript _tileScript;
 
@@ -17,6 +18,7 @@ public class TileEditor : Editor {
         tileTypeProp = serializedObject.FindProperty("tileType");
         plateIDProp = serializedObject.FindProperty("plateID");
         colorProp = serializedObject.FindProperty("color");
+        hintIDProp = serializedObject.FindProperty("hintID");
 
         _tileScript = (TileScript)target;
     }
@@ -45,6 +47,11 @@ public class TileEditor : Editor {
 
             case TileType.Destination:
                 EditorGUILayout.PropertyField(colorProp, new GUIContent("Destination Color"));
+                break;
+
+            case TileType.Uncolored:
+                EditorGUILayout.PropertyField(colorProp, new GUIContent("Needed Color"));
+                EditorGUILayout.PropertyField(hintIDProp, new GUIContent("Hint ID"));
                 break;
 
             default:

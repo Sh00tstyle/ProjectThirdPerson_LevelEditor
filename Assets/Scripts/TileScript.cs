@@ -7,9 +7,10 @@ public class TileScript : MonoBehaviour {
 
     public TileType tileType;
 
-    //properties for pressure plates and activatable tiles
+    //properties for pressure plates and activatable tiles and hints
     public int plateID;
     public TileColor color;
+    public int hintID;
 
     public void SetTileType(TileType pType) {
         tileType = pType;

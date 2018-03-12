@@ -16,6 +16,10 @@ public class LevelExporterScript : MonoBehaviour {
     public GameObject tilePrefab;
     public float tileSize;
 
+    [Header("Hint Settings")]
+    public int hintAmount;
+    public int triesPerHint;
+
     [Header("Scene Objects")]
     public Transform sceneEnvironment;
 
@@ -154,15 +158,38 @@ public class LevelExporterScript : MonoBehaviour {
                 default:
                     break;
             }
-
-            if(tileType == (int)TileType.PressurePlate) {
-                
-            } else if(tileType == (int)TileType.ActivatableTile) {
-                
-            }
         }
 
         sceneContainer.AddPlayfield(playfield);
+
+        //setting up hint playfields
+        for (int i = 0; i < hintAmount; i++) {
+            Playfield hintPlayfield = new Playfield();
+
+            for (int j = 1; j < allTiles.Length; j++) {
+                TileScript currentTile = allTiles[j].gameObject.GetComponent<TileScript>();
+
+                TileType tileType = currentTile.GetTileType();
+                int tileTypeInt = (int)tileType;
+
+                if(tileType == TileType.Uncolored) {
+                    //change to precolored tile color
+                    if(currentTile.hintID <= i + 1 && currentTile.hintID != 0) {
+                        tileTypeInt = (int)currentTile.color;
+                    }
+                }
+
+                //getting the tile type value and storing it in the playfield list
+                hintPlayfield.AddContent(tileTypeInt);
+            }
+
+            sceneContainer.AddHintPlayfield(hintPlayfield);
+        }
+
+        //generate hint props
+        HintProps hintProps = new HintProps();
+        hintProps.TriesPerHint = triesPerHint;
+        sceneContainer.AddHintProps(hintProps);
 
         //Adding the scene environment objects to the XML file
         for (int i = 1; i < _sceneObjects.Length; i++) {

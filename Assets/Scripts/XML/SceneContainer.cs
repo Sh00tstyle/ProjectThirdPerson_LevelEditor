@@ -12,6 +12,14 @@ public class SceneContainer {
     [XmlElement("Playfield")]
     public Playfield Playfield;
 
+    //Hint playfields
+    [XmlArray("HintPlayfields")]
+    [XmlArrayItem("HintPlayfield")]
+    public List<Playfield> HintPlayfields = new List<Playfield>();
+
+    [XmlElement("HintProps")]
+    public HintProps HintProps;
+
     //Environment
     [XmlArray("SceneObjects")]
     [XmlArrayItem("SceneObject")]
@@ -34,6 +42,14 @@ public class SceneContainer {
 
     public void AddPlayfield(Playfield playfield) {
         Playfield = playfield;
+    }
+
+    public void AddHintPlayfield(Playfield playfield) {
+        HintPlayfields.Add(playfield);
+    }
+
+    public void AddHintProps(HintProps hintProps) {
+        HintProps = hintProps;
     }
 
     public void AddSceneObject(SceneObject sceneObject) {
