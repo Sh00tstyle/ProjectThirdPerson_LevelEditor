@@ -1,18 +1,18 @@
 fileFormatVersion: 2
 guid: 6a62ddf45b01d984cb9548c3278f2d6d
-timeCreated: 1520513053
+timeCreated: 1521038729
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: Level8:Mesh
+    400000: //RootNode
+    400002: Level8:Mesh
+    2100000: Level8_MeshMat
+    2300000: Level8:Mesh
+    3300000: Level8:Mesh
+    4300000: Level8:Mesh
   externalObjects: {}
   materials:
     importMaterials: 1
